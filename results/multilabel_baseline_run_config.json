@@ -1,0 +1,23 @@
+{
+  "experiment_scope": "core_audit_selected_multilabel",
+  "seed": 42,
+  "selected_labels": [
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule",
+    "Mass",
+    "Pneumothorax",
+    "Consolidation"
+  ],
+  "n_labels": 7,
+  "checkpoint": "checkpoints/multilabel_core_baseline_resnet18_best.pt",
+  "selection_note": "All 14 NIH labels were audited using predefined sample-support criteria. The core selected labels meet stricter minimum positive-count requirements and are used for the main multi-label fairness experiment. Broad-eligible but non-core labels are retained for supplementary analysis.",
+  "core_selection_rules": {
+    "train_positive_min": 3000,
+    "val_positive_min": 400,
+    "test_positive_min": 900,
+    "female_test_positive_min": 300,
+    "male_test_positive_min": 300
+  }
+}

@@ -1,0 +1,37 @@
+model,metric,point_estimate_mean_across_seeds,ci_level,ci_lower,ci_upper,n_bootstrap,resampling_unit,threshold_policy
+Baseline,macro_AUROC,0.8091363125541612,0.95,0.8035595905975386,0.8144778681641195,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,macro_AUPRC,0.30715931633393173,0.95,0.2959532067829545,0.3192914363291075,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,mean_FNR_gap,0.04914639546580346,0.95,0.0362100997573287,0.0879176694677354,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,mean_FPR_gap,0.018262314509763,0.95,0.01342819448049816,0.029326101974336848,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,mean_Equalized_Odds_gap,0.049359855638926774,0.95,0.038622689802659226,0.08866082843941374,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,mean_Worst_group_Recall,0.4428947083818844,0.95,0.4140714888497025,0.4578287210411722,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,mean_AUROC_gap,0.014210569760679933,0.95,0.01126875796873177,0.027730437799069745,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,sex_head_AUROC,,0.95,,,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Baseline,sex_head_accuracy,,0.95,,,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,macro_AUROC,0.8098198538940471,0.95,0.8042455127452613,0.8152057230987401,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,macro_AUPRC,0.3067016944358947,0.95,0.2953614627645638,0.3190381844304956,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,mean_FNR_gap,0.036503506761792065,0.95,0.03013659045912806,0.07316265789828205,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,mean_FPR_gap,0.013985033119550667,0.95,0.009961693031478348,0.024375094891725315,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,mean_Equalized_Odds_gap,0.0373805833092112,0.95,0.03241033226567666,0.07414946463944541,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,mean_Worst_group_Recall,0.4518434103290836,0.95,0.4249557072141965,0.4630504651827839,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,mean_AUROC_gap,0.012373735799069467,0.95,0.01064721491828978,0.02609291918026429,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,sex_head_AUROC,0.5530765439623341,0.95,0.5341112262995507,0.5726370717337137,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Static GRL,sex_head_accuracy,0.5843724768996142,0.95,0.5652195806161595,0.6037303491452102,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,macro_AUROC,0.8076623842781564,0.95,0.8018357486065929,0.8131829283656499,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,macro_AUPRC,0.3050294132951766,0.95,0.29374545153726245,0.31720080074408974,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,mean_FNR_gap,0.045282974662620934,0.95,0.03391235448435107,0.08363923395506498,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,mean_FPR_gap,0.014648106876252167,0.95,0.01039803969987337,0.025810979241960824,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,mean_Equalized_Odds_gap,0.045392905587487896,0.95,0.03577667806033927,0.08427734461036575,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,mean_Worst_group_Recall,0.43870973040498734,0.95,0.41003177073959746,0.45268584376294774,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,mean_AUROC_gap,0.013204194292187965,0.95,0.011044973717999923,0.027396266370094673,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,sex_head_AUROC,0.5558567624873824,0.95,0.5399719362535954,0.5725010758088844,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Standard Dynamic GRL,sex_head_accuracy,0.5738464758828982,0.95,0.5558379595345944,0.5925199724884447,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,macro_AUROC,0.8113385151823467,0.95,0.8056982237330353,0.8168276362001905,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,macro_AUPRC,0.31140488874496225,0.95,0.30008149377610194,0.323706867803981,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,mean_FNR_gap,0.028794761172607264,0.95,0.025232224295709583,0.06752205447515523,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,mean_FPR_gap,0.0102293766110568,0.95,0.007917366683137804,0.01964937834772664,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,mean_Equalized_Odds_gap,0.030151414142430766,0.95,0.027227465693989338,0.06835020263249247,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,mean_Worst_group_Recall,0.4622290628698718,0.95,0.4336498639809051,0.4723939294510725,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,mean_AUROC_gap,0.012664885830917365,0.95,0.010342907630368098,0.02675864978914804,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,sex_head_AUROC,,0.95,,,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set
+Final Dynamic,sex_head_accuracy,,0.95,,,10000,"Patient ID cluster, stratified by sex",Frozen seed-specific thresholds selected on complete validation set

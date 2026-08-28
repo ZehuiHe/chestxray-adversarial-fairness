@@ -1,0 +1,3 @@
+seed,warmup_epoch,conditional_adv_loss
+42,1,0.6928399460424193
+42,2,0.6922920212439999

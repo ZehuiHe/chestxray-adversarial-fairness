@@ -1,0 +1,48 @@
+{
+  "selected_labels": [
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule",
+    "Mass",
+    "Pneumothorax",
+    "Consolidation"
+  ],
+  "core_selected_labels": [
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule",
+    "Mass",
+    "Pneumothorax",
+    "Consolidation"
+  ],
+  "broad_eligible_labels": [
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule",
+    "Mass",
+    "Pneumothorax",
+    "Consolidation",
+    "Pleural_Thickening",
+    "Cardiomegaly",
+    "Emphysema",
+    "Edema"
+  ],
+  "broad_selection_rules": {
+    "train_positive_min": 1500,
+    "val_positive_min": 200,
+    "test_positive_min": 400,
+    "female_test_positive_min": 150,
+    "male_test_positive_min": 150
+  },
+  "core_selection_rules": {
+    "train_positive_min": 3000,
+    "val_positive_min": 400,
+    "test_positive_min": 900,
+    "female_test_positive_min": 300,
+    "male_test_positive_min": 300
+  },
+  "selection_note": "All 14 NIH labels were audited using predefined sample-support criteria. The core selected labels meet stricter minimum positive-count requirements and are used for the main multi-label fairness experiment. Broad-eligible but non-core labels are retained for supplementary analysis."
+}

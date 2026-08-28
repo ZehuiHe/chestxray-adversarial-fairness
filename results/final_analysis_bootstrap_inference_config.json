@@ -1,0 +1,15 @@
+{
+  "n_bootstrap": 10000,
+  "bootstrap_random_seed": 202606,
+  "resampling_unit": "Paired Patient ID cluster bootstrap, stratified by sex",
+  "threshold_policy": "Frozen seed-specific thresholds selected on complete validation set",
+  "p_value_definition": "2 * min(P(delta <= 0), P(delta >= 0)), floored at 1/n_valid",
+  "p_value_resolution_floor": 0.0001,
+  "multiple_testing_family": "6 model pairings x 7 primary metrics = 42 paired tests",
+  "family_size": 42,
+  "alpha": 0.05,
+  "corrections": [
+    "Holm-Bonferroni family-wise error rate",
+    "Benjamini-Hochberg false discovery rate"
+  ]
+}

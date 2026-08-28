@@ -1,0 +1,8 @@
+label,selected_threshold,threshold_metric,threshold_metric_value,selection_population
+Infiltration,0.5099999999999999,validation_f1,0.399130143860823,complete_validation_set
+Effusion,0.695,validation_f1,0.5050364709968739,complete_validation_set
+Atelectasis,0.695,validation_f1,0.41458474004051316,complete_validation_set
+Nodule,0.69,validation_f1,0.30711610486891383,complete_validation_set
+Mass,0.9149999999999999,validation_f1,0.3918918918918919,complete_validation_set
+Pneumothorax,0.7999999999999999,validation_f1,0.36712328767123287,complete_validation_set
+Consolidation,0.7749999999999999,validation_f1,0.21973684210526315,complete_validation_set

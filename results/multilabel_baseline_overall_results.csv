@@ -1,0 +1,2 @@
+model,experiment_scope,n_labels,selected_labels,test_macro_auroc,test_macro_auprc,mean_AUROC_gap,mean_AUPRC_gap,mean_Recall_gap,mean_FNR_gap,mean_Worst_group_AUROC,mean_Worst_group_Recall
+multilabel_baseline_resnet18,core_audit_selected_multilabel,7,Infiltration|Effusion|Atelectasis|Nodule|Mass|Pneumothorax|Consolidation,0.7971226974287442,0.29072653152655337,0.012067212180706452,0.02956374499179618,0.03841548099546964,0.03841548099546965,0.7905631187139031,0.41244049862072973

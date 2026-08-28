@@ -1,0 +1,2 @@
+model,selected_threshold,threshold_metric,threshold_metric_value,test_loss,test_auroc,test_auprc,AUROC_gap,AUPRC_gap,Recall_gap,FNR_gap,Worst_group_AUROC,Worst_group_Recall
+group_balanced_sampling_resnet18,0.59,validation_f1,0.494314381270903,0.35640455062286497,0.8624589928012731,0.4654223565923504,0.004665645828079268,0.004533306308832363,0.04332083464521852,0.043320834645218576,0.8600315160894438,0.5927240461401952

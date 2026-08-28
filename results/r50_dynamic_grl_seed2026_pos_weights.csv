@@ -1,0 +1,8 @@
+label,train_positive,train_negative,pos_weight
+Infiltration,13868,65005,4.68741
+Effusion,9533,69340,7.2736807
+Atelectasis,8262,70611,8.546478
+Nodule,4415,74458,16.864779
+Mass,4199,74674,17.783758
+Pneumothorax,3841,75032,19.534496
+Consolidation,3280,75593,23.046646

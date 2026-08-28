@@ -1,0 +1,30 @@
+# Model checkpoints (large; available on request)
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Patient-level artefacts - not redistributed (see README and Appendix B)
+splits/
+*.npz
+
+# Large per-step diagnostic traces
+*stepwise*.csv
+*lambda_schedule_mean_std*.csv
+
+# Raw dataset
+images_*/
+Data_Entry_2017.csv
+BBox_List_2017.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

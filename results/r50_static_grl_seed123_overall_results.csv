@@ -1,0 +1,2 @@
+model_variant,model,seed,n_labels,selected_labels,lambda_adv,best_epoch,best_val_macro_auroc,test_macro_auroc,test_macro_auprc,test_sex_auroc,test_sex_accuracy,mean_FNR_gap,mean_FPR_gap,mean_Equalized_Odds_gap,mean_Worst_group_Recall,mean_AUROC_gap
+r50_static_grl,r50_static_grl,123,7,Infiltration|Effusion|Atelectasis|Nodule|Mass|Pneumothorax|Consolidation,0.1,4,0.8075398523351798,0.8103168314184837,0.3071997060336375,0.5262148334286423,0.5717233336323675,0.036526602542560536,0.015320134529247008,0.03652660254256051,0.44684770576235994,0.011492715935811597

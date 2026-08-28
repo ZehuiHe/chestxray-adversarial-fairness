@@ -1,0 +1,80 @@
+{
+  "project_scope": "multi_label_chest_xray_classification",
+  "backbone": "ImageNet-pretrained ResNet-50",
+  "backbone_weights": "ResNet50_Weights.IMAGENET1K_V2",
+  "feature_dim_from_model_fc_in_features": 2048,
+  "selected_labels": [
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule",
+    "Mass",
+    "Pneumothorax",
+    "Consolidation"
+  ],
+  "n_labels": 7,
+  "split_protocol": "fixed patient-level train/validation/test split loaded from disk",
+  "split_files": {
+    "train": "splits/multilabel_train.csv",
+    "validation": "splits/multilabel_val.csv",
+    "test": "splits/multilabel_test.csv"
+  },
+  "preprocessing": {
+    "image_size": [
+      224,
+      224
+    ],
+    "train_augmentation": "RandomHorizontalFlip(p=0.5)",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "seed": 42,
+  "seed_protocol": "python random, NumPy, PyTorch, DataLoader generator; num_workers=0",
+  "batch_size": 16,
+  "num_epochs": 5,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.0001
+  },
+  "disease_loss": "BCEWithLogitsLoss with per-label training-set pos_weight",
+  "pos_weight_by_label": {
+    "Infiltration": 4.6874098777771,
+    "Effusion": 7.273680686950684,
+    "Atelectasis": 8.546478271484375,
+    "Nodule": 16.864778518676758,
+    "Mass": 17.78375816345215,
+    "Pneumothorax": 19.534496307373047,
+    "Consolidation": 23.046646118164062
+  },
+  "checkpoint_selection": "maximum validation macro AUROC",
+  "threshold_protocol": "one F1-maximising threshold per label on the complete validation set; fixed unchanged for overall, Female and Male test metrics",
+  "checkpoint": "checkpoints/r50_baseline_seed42_best.pt",
+  "test_set_hyperparameter_policy": "No threshold or hyperparameter tuning on test data.",
+  "bootstrap_unit": "Patient ID cluster resampling from saved test prediction archive",
+  "model_variant": "baseline",
+  "adversarial_training": false,
+  "threshold_metric": "validation_f1",
+  "audit_config_source": "results/multilabel_selected_labels.json",
+  "core_selection_rules": {
+    "train_positive_min": 3000,
+    "val_positive_min": 400,
+    "test_positive_min": 900,
+    "female_test_positive_min": 300,
+    "male_test_positive_min": 300
+  },
+  "best_epoch": 1,
+  "best_validation_macro_auroc": 0.808248744551784,
+  "final_validation_macro_auroc": 0.808248744551784,
+  "final_validation_macro_auprc": 0.29624474432619763,
+  "test_macro_auroc": 0.8058156033895477,
+  "test_macro_auprc": 0.30105797920899746
+}

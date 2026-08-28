@@ -1,0 +1,4 @@
+seed,static_validation_mean_EO_gap,static_validation_archive
+42,0.08553865780283638,results/r50_static_grl_seed42_validation_predictions.npz
+123,0.07394029023318452,results/r50_static_grl_seed123_validation_predictions.npz
+2026,0.052390313187620254,results/r50_static_grl_seed2026_validation_predictions.npz

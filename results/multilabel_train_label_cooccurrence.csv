@@ -1,0 +1,8 @@
+label,Infiltration,Effusion,Atelectasis,Nodule,Mass,Pneumothorax,Consolidation
+Infiltration,13868,2881,2325,1084,817,672,820
+Effusion,2881,9533,2384,646,924,696,881
+Atelectasis,2325,2384,8262,416,548,562,871
+Nodule,1084,646,416,4415,627,241,302
+Mass,817,924,548,627,4199,340,452
+Pneumothorax,672,696,562,241,340,3841,152
+Consolidation,820,881,871,302,452,152,3280

@@ -1,0 +1,107 @@
+{
+  "project_scope": "multi_label_chest_xray_classification",
+  "backbone": "ImageNet-pretrained ResNet-50",
+  "backbone_weights": "ResNet50_Weights.IMAGENET1K_V2",
+  "feature_dim_from_model_fc_in_features": 2048,
+  "selected_labels": [
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule",
+    "Mass",
+    "Pneumothorax",
+    "Consolidation"
+  ],
+  "n_labels": 7,
+  "split_protocol": "fixed patient-level train/validation/test split loaded from disk",
+  "split_files": {
+    "train": "splits/multilabel_train.csv",
+    "validation": "splits/multilabel_val.csv",
+    "test": "splits/multilabel_test.csv"
+  },
+  "preprocessing": {
+    "image_size": [
+      224,
+      224
+    ],
+    "train_augmentation": "RandomHorizontalFlip(p=0.5)",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "seed": 123,
+  "seed_protocol": "python random, NumPy, PyTorch, DataLoader generator; num_workers=0",
+  "batch_size": 16,
+  "num_epochs": 9,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.0001
+  },
+  "disease_loss": "BCEWithLogitsLoss with per-label training-set pos_weight",
+  "pos_weight_by_label": {
+    "Infiltration": 4.6874098777771,
+    "Effusion": 7.273680686950684,
+    "Atelectasis": 8.546478271484375,
+    "Nodule": 16.864778518676758,
+    "Mass": 17.78375816345215,
+    "Pneumothorax": 19.534496307373047,
+    "Consolidation": 23.046646118164062
+  },
+  "checkpoint_selection": "maximum validation macro AUROC",
+  "threshold_protocol": "one F1-maximising threshold per label on the complete validation set; fixed unchanged for overall, Female and Male test metrics",
+  "checkpoint": "checkpoints/r50_dynamic_eo_projected_twostage_seed123_best.pt",
+  "test_set_hyperparameter_policy": "No test-set selection, tuning, or threshold optimisation.",
+  "bootstrap_unit": "Patient ID cluster resampling from saved test prediction archive",
+  "experiment_id": "r50_dynamic_eo_projected_twostage_multiseed",
+  "model_variant": "r50_dynamic_eo_projected_twostage",
+  "baseline_initialisation_checkpoint": "checkpoints/r50_baseline_final_seed123_best.pt",
+  "stage2": "frozen diagnostic model; conditional EO-adversary warm-up",
+  "stage2_epochs": 1,
+  "stage3": "partial dynamic EO-conditioned projected adversarial fine-tuning",
+  "trainable_stage3": [
+    "ResNet-50 layer4",
+    "disease head",
+    "per-label EO adversary"
+  ],
+  "frozen_stage3": [
+    "conv1",
+    "bn1",
+    "layer1",
+    "layer2",
+    "layer3"
+  ],
+  "eo_adversary": "seven MLPs: [disease_logit_k, true_label_k] -> sex",
+  "gradient_projection": "remove task-gradient component that reduces conditional adversary loss, then apply -lambda(t)*adversarial gradient",
+  "lambda_max": 0.1,
+  "zero_lambda_epochs": 0.5,
+  "ramp_end_epoch": 3.0,
+  "learning_rates": {
+    "layer4": 1e-05,
+    "disease_head": 3e-05,
+    "eo_adversary": 0.0001
+  },
+  "selection_rule": "from fine-tuning epoch >= 3, highest validation macro AUROC with validation mean EO gap <= selection target; ties use macro AUPRC then worst-group recall",
+  "selection_target_eo": 0.07594029023318452,
+  "selection_reference": "existing static validation EO gap + tolerance (0.002)",
+  "static_validation_reference_archive": "results/r50_static_grl_seed123_validation_predictions.npz",
+  "baseline_validation_mean_EO_gap": 0.08048508255434648,
+  "static_validation_mean_EO_gap": 0.07394029023318452,
+  "threshold_metric": "validation_f1",
+  "selected_checkpoint": "checkpoints/r50_dynamic_eo_projected_twostage_seed123_best.pt",
+  "selected_epoch": 3,
+  "selection_status": "matched_static_validation_EO",
+  "selected_validation_EO_gap": 0.07032928447774764,
+  "selected_validation_macro_auroc": 0.8128215007985802,
+  "selected_validation_macro_auprc": 0.29721823246337664,
+  "test_macro_auroc": 0.8100832576397133,
+  "test_macro_auprc": 0.3100309248046919,
+  "test_mean_EO_gap": 0.034564932951837005
+}
