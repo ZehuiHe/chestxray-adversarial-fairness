@@ -1,7 +1,7 @@
-# Adversarial Unlearning for Sex-Based Subgroup Disparities in Chest X-Ray Classification
+# Adversarial Unlearning for Sex-Based Performance Disparities in Chest X-Ray Classification
 
 Code and results for the MSc dissertation *Evaluating Adversarial Unlearning for
-Sex-Based Subgroup Performance Disparities in Chest X-Ray Classification*.
+Sex-Based Performance Disparities in Chest X-Ray Classification*.
 
 - **Author:** Zehui He
 - **Degree:** MSc Advanced Computer Science (Data Analytics), University of Leeds, 2025/2026
@@ -11,8 +11,8 @@ Sex-Based Subgroup Performance Disparities in Chest X-Ray Classification*.
 
 A chest X-ray classifier can look accurate overall while missing more disease in
 one group of patients than another. This project asks whether *adversarial
-representation learning* — training the network so that its internal features
-become less useful for predicting a patient's recorded sex — reduces that
+representation learning*, which trains the network so that its internal features
+become less useful for predicting a patient's recorded sex, reduces that
 imbalance without damaging disease-prediction performance.
 
 Four ResNet-50 variants are compared on seven NIH ChestX-ray14 pathologies under
@@ -66,16 +66,17 @@ pip install -r requirements.txt
 ```
 
 Developed on Python 3.10 with PyTorch and an Apple Silicon GPU (`mps`). Any
-CUDA device works; set the device in the shared module.
+CUDA device works. Set the device in the shared module.
 
 **3. Run order.** Notebooks are numbered in dependency order. `01` and `02` must
-run first — they create the fixed split manifests every later notebook loads.
+run first, because they create the fixed split manifests every later notebook
+loads.
 `05d` requires a completed baseline checkpoint from `03`. `06` aggregates the
 four main variants and produces every number in Chapter 4.
 
 ## What is deliberately not included
 
-- **Trained checkpoints** (~2.2 GB). Available on request; every reported metric
+- **Trained checkpoints** (~2.2 GB). Available on request. Every reported metric
   is recomputable from the stored prediction archives without them.
 - **Split manifests and per-image prediction archives.** These carry Patient ID
   and recorded sex for individual radiographs. Appendix B of the dissertation
@@ -88,7 +89,7 @@ four main variants and produces every number in Chapter 4.
 
 ## Notes
 
-- Every reported number derives from a fixed patient-level split; no patient
+- Every reported number derives from a fixed patient-level split. No patient
   appears in more than one partition.
 - Per-label decision thresholds are selected on validation data only and frozen
   before test evaluation, then applied identically to both recorded-sex groups.
